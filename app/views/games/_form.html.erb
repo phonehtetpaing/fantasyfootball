@@ -11,23 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :winner_id %>
-    <%=select_tag "teams", options_for_select(["#{@match.team1_id}", "#{@match.team2_id}"], "id") %>
+    <%= form.select(:winner_id, options_for_select(["#{@match.team1_id}", "#{@match.team2_id}"], "id")) %>
     <%= form.label :loser_id %>
-    <%=select_tag "teams", options_for_select(["#{@match.team1_id}", "#{@match.team2_id}"], "id") %>
-  </div>
+    <%= form.select(:loser_id, options_for_select(["#{@match.team1_id}", "#{@match.team2_id}"], "id")) %>
 
-  <div class="field">
+    <br>
     <%= form.hidden_field :match_id %>
-  </div>
 
-  <div class="field">
     <%= form.label :score %>
     <%= form.number_field :score %>
-  </div>
 
+  </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create Game', class:'btn btn-primary btn-sm'%>
   </div>
 <% end %>

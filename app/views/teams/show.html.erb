@@ -1,3 +1,8 @@
+<p>
+<div class="row">
+  <div class="card">
+    <div class="card-body">
+      <div class="col-sm">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -14,6 +19,13 @@
   <strong>Name:</strong>
   <%= @team.name %>
 </p>
-
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<p>
+<%= link_to 'Create Match', new_match_path, class:"btn-sm btn-primary"%>
+</p>
+<%= link_to 'Edit', edit_team_path(@team),class:"btn-sm btn-secondary" %> |
+<%= link_to 'Back', teams_path, class:"btn-sm btn-info"%>
+      </div>
+    </div>
+  </div>
+</div>
+</p>

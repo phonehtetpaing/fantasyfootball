@@ -1,18 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
+<div class="row">
+  <div class="card">
+    <div class="card-body">
+      <div class="col-sm">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
+        <p>
+        <strong>Firstname</strong>
+        <br>
+        <%= @user.firstname %>
+        </p>
+        <p>
+        <strong>Lastname</strong>
+        <br>
+        <%= @user.lastname %>
+        </p>
 
-<p>
-<%= link_to 'Create Team', new_team_path %>
-</p>
+        <p>
+        <%= link_to 'Create Team', new_team_path, class:"btn-sm btn-primary"%>
+        </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+        <%= link_to 'Edit', edit_user_path(@user), class:"btn-sm btn-secondary"%> |
+        <%= link_to 'Back', users_path, class:"btn-sm btn-info"%>
+      </div>
+    </div>
+  </div>
+</div>
+</p>

@@ -30,10 +30,12 @@
 
   <div class="field">
     <%= form.label :name %>
+    <br>
     <%= form.text_field :name, required: true %>
   </div>
+  <br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Team", class: "btn-sm btn-primary"%>
   </div>
 <% end %>

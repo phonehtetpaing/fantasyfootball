@@ -13,15 +13,18 @@
 
   <div class="field">
     <%= form.label :firstname %>
+    <br>
     <%= form.text_field :firstname , required: true%>
   </div>
 
   <div class="field">
     <%= form.label :lastname %>
+    <br>
     <%= form.text_field :lastname , required: true%>
   </div>
+  <br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Sign up", class: "btn-sm btn-primary" %>
   </div>
 <% end %>

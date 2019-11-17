@@ -2,7 +2,7 @@
 
 <h1>Matches</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Team1</th>
@@ -15,8 +15,8 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= match.team1_id %></td>
-        <td><%= match.team2_id %></td>
+        <td><%= Team.find_by(id: match.team1_id).name%></td>
+        <td><%= Team.find_by(id: match.team2_id).name %></td>
         <td><%= match.winning_team_id %></td>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>

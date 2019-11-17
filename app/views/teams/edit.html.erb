@@ -1,6 +1,15 @@
-<h1>Editing Team</h1>
-
-<%= render 'form', team: @team %>
-
-<%= link_to 'Show', @team %> |
-<%= link_to 'Back', teams_path %>
+<p>
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <div class="col-sm">
+          <h2>New Team</h2>
+          <%= render 'form', team: @team %>
+          <p>
+            <%= button_to 'Back', teams_path, class:"btn-sm btn-skyblue"%>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</p>
