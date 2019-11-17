@@ -66,7 +66,7 @@ class TeamsController < ApplicationController
     end
   end
   def ranking
-    @teams = Team.all.order('ranking')
+    @teams = Team.all.order('score DESC')
   end
 
   private
