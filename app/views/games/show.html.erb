@@ -1,18 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Game - <%=@game.id %></h1>
-
 <p>
-  <strong>Team1:</strong>
-  <%= @game.team1_id %>
+  <strong>Winner:</strong>
+  <%= @game.winner_id %>
 </p>
 
 <p>
-  <strong>Team2:</strong>
-  <%= @game.team2_id %>
+  <strong>Match:</strong>
+  <%= @game.match_id %>
 </p>
-<h3>Who Will win the match?</h3>
-<%= render partial: 'match_results/form', locals: { match_result: @match_result} %>
+
+<p>
+  <strong>Score:</strong>
+  <%= @game.score %>
+</p>
+
+<p>
+  <strong>Loser:</strong>
+  <%= @game.loser_id %>
+</p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

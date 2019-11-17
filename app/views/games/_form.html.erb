@@ -12,13 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :team1_id %>
-    <%= form.number_field :team1_id %>
+    <%= form.label :winner_id %>
+    <%=select_tag "teams", options_for_select(["#{@match.team1_id}", "#{@match.team2_id}"], "id") %>
+    <%= form.label :loser_id %>
+    <%=select_tag "teams", options_for_select(["#{@match.team1_id}", "#{@match.team2_id}"], "id") %>
   </div>
 
   <div class="field">
-    <%= form.label :team2_id %>
-    <%= form.number_field :team2_id %>
+    <%= form.hidden_field :match_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.number_field :score %>
   </div>
 
   <div class="actions">

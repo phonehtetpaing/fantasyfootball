@@ -10,8 +10,6 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    @match_results = @game.match_results
-    @match_result = @game.match_results.build
   end
 
   # GET /games/new
@@ -27,11 +25,19 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
-
+    @match = @game.match
+    if !@match.games.first.nil?
+      if @game.winner_id == @match.games.first.winner_id
+        @match.winning_team_id = @game.winner_id
+      else
+        @match.games_count +=1
+      end
+    end
+    @match.save!
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render :show, status: :created, location: @game }
+        format.html { redirect_to match_path(@game.match_id), notice: 'Game was successfully created.' }
+        format.json { render :show, status: :created, location: match_path(@game.match_id)}
       else
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }
@@ -71,6 +77,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:team1_id, :team2_id)
+      params.require(:game).permit(:winner_id, :match_id, :score, :loser_id)
     end
 end

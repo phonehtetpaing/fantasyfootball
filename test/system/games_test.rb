@@ -14,8 +14,10 @@ class GamesTest < ApplicationSystemTestCase
     visit games_url
     click_on "New Game"
 
-    fill_in "Team1", with: @game.team1_id
-    fill_in "Team2", with: @game.team2_id
+    fill_in "Loser", with: @game.loser_id
+    fill_in "Match", with: @game.match_id
+    fill_in "Score", with: @game.score
+    fill_in "Winner", with: @game.winner_id
     click_on "Create Game"
 
     assert_text "Game was successfully created"
@@ -26,8 +28,10 @@ class GamesTest < ApplicationSystemTestCase
     visit games_url
     click_on "Edit", match: :first
 
-    fill_in "Team1", with: @game.team1_id
-    fill_in "Team2", with: @game.team2_id
+    fill_in "Loser", with: @game.loser_id
+    fill_in "Match", with: @game.match_id
+    fill_in "Score", with: @game.score
+    fill_in "Winner", with: @game.winner_id
     click_on "Update Game"
 
     assert_text "Game was successfully updated"

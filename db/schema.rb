@@ -10,22 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_105727) do
+ActiveRecord::Schema.define(version: 2019_11_17_173330) do
 
   create_table "games", force: :cascade do |t|
-    t.integer "team1_id"
-    t.integer "team2_id"
+    t.integer "winner_id"
+    t.integer "match_id"
+    t.integer "score"
+    t.integer "loser_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "match_results", force: :cascade do |t|
-    t.integer "winningteam_id"
-    t.integer "game_id"
-    t.integer "score"
-    t.integer "losingteam"
+  create_table "matches", force: :cascade do |t|
+    t.integer "team1_id"
+    t.integer "team2_id"
+    t.integer "winning_team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "games_count"
   end
 
   create_table "teams", force: :cascade do |t|

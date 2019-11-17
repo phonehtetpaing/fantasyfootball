@@ -1,3 +1,3 @@
 class Game < ApplicationRecord
-  has_many :match_results
+  belongs_to :match
 end

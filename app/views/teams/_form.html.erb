@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :player_count %>
-    <%= form.number_field :player_count %>
+    <%= form.number_field :player_count ,min: 1, max: 2, required: true%>
   </div>
 
   <div class="field">
@@ -30,7 +30,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true %>
   </div>
 
   <div class="actions">
