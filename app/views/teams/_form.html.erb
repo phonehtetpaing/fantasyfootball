@@ -17,16 +17,20 @@
   </div>
 
   <div class="field">
-    <%= form.hidden_field :ranking %>
+    <%= form.hidden_field :score, value: 0%>
   </div>
+  <div class="field">
+    <%= form.hidden_field :total_matches, value: 0%>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :wins, value: 0%>
+  </div>
+
 
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :user_id %>
   </div>
 
   <div class="actions">

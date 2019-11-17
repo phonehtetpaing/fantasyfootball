@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Winningteam:</strong>
+  <%= @match_result.winningteam_id %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @match_result.game_id %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @match_result.score %>
+</p>
+
+<p>
+  <strong>Losingteam:</strong>
+  <%= @match_result.losingteam %>
+</p>
+
+<%= link_to 'Edit', edit_match_result_path(@match_result) %> |
+<%= link_to 'Back', match_results_path %>

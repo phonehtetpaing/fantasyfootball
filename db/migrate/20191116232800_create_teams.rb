@@ -5,7 +5,8 @@ class CreateTeams < ActiveRecord::Migration[5.2]
       t.integer :ranking
       t.string :name
       t.integer :score
-      t.integer :user_id
+      t.integer :total_matches
+      t.integer :wins
 
       t.timestamps
     end

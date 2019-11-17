@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :match_results
+  resources :games
   resources :teams
   resources :users
   get '/ranking', to: 'teams#ranking'

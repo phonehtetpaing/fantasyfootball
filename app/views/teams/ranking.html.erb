@@ -3,6 +3,8 @@
     <tr>
       <th scope="col">Rank #</th>
       <th scope="col">Team</th>
+      <th scope="col">Total Matches</th>
+      <th scope="col">Wins</th>
       <th scope="col">Score</th>
     </tr>
   </thead>
@@ -11,6 +13,8 @@
       <tr>
         <th scope="row"><%=team.ranking%></th>
         <td><%=team.name%></td>
+        <td><%=team.total_matches%></td>
+        <td><%=team.wins%></td>
         <td><%=team.score%></td>
       </tr>
     <% end %>

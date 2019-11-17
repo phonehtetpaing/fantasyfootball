@@ -25,7 +25,12 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(team_params)
-
+    @lastranking = Team.order('ranking').last
+    if @lastranking == nil
+      @team.ranking = 1
+    else
+      @team.ranking = @lastranking.ranking+1
+    end
     respond_to do |format|
       if @team.save
         format.html { redirect_to @team, notice: 'Team was successfully created.' }
@@ -72,6 +77,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:player_count, :ranking, :name, :user_id)
+      params.require(:team).permit(:player_count, :ranking, :name, :total_matches, :wins)
     end
 end
