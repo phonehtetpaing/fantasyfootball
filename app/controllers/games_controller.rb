@@ -30,8 +30,22 @@ class GamesController < ApplicationController
     if !@match.games.first.nil?
       if @game.winner_id == @match.games.first.winner_id
         @match.winning_team_id = @game.winner_id
+        @winning_team = Team.find(@match.winning_team_id)
+        @winning_team.wins +=1
+        @winning_team.total_matches += 1
+        @winning_team.save
+        @losing_team = Team.find(@game.loser_id)
+        @losing_team.total_matches += 1
+        @losing_team.save
       elsif @match.games_count == 3
         @match.winning_team_id = @game.winner_id
+        @winning_team = Team.find(@match.winning_team_id)
+        @winning_team.wins +=1
+        @winning_team.total_matches += 1
+        @winning_team.save
+        @losing_team = Team.find(@game.loser_id)
+        @loser_team.total_matches += 1
+        @losing_team.save
       end
     end
     @match.save!

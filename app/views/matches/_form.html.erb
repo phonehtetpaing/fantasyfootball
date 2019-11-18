@@ -14,13 +14,14 @@
   <div class="field">
     <%= form.label :team1_id %>
     <br>
-    <%= form.number_field :team1_id, required: true%>
+    <%= form.select(:team1_id, Team.all.collect { |p| [ p.name, p.id ] }, {}, {class: "form-control"}) %>
+
   </div>
 
   <div class="field">
     <%= form.label :team2_id %>
     <br>
-    <%= form.number_field :team2_id , required: true%>
+    <%= form.select(:team2_id, Team.all.collect { |p| [ p.name, p.id ] }, {}, {class: "form-control"})%>
   </div>
 
   <div class="field">
