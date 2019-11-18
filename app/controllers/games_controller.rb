@@ -44,7 +44,7 @@ class GamesController < ApplicationController
         @winning_team.total_matches += 1
         @winning_team.save
         @losing_team = Team.find(@game.loser_id)
-        @loser_team.total_matches += 1
+        @losing_team.total_matches += 1
         @losing_team.save
       end
     end

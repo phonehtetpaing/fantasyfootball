@@ -13,10 +13,9 @@
 
   <div class="form-group">
     <%= form.label :winner_id %>
-    <%= form.select(:winner_id, options_for_select(["#{Team.find(@match.team1_id).name}", "#{Team.find(@match.team2_id).name}"], "id")) %>
+    <%= form.select(:winner_id, [["#{Team.find(@match.team1_id).name}",@match.team1_id], ["#{Team.find(@match.team2_id).name}",@match.team2_id]], {}) %>
     <%= form.label :loser_id %>
-    <%= form.select(:loser_id, options_for_select(["#{Team.find(@match.team1_id).name}", "#{Team.find(@match.team2_id).name}"], "id")) %>
-
+    <%= form.select(:loser_id, [["#{Team.find(@match.team1_id).name}",@match.team1_id], ["#{Team.find(@match.team2_id).name}",@match.team2_id]], {}) %>
     <br>
     <%= form.hidden_field :match_id %>
 

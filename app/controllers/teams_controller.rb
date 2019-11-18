@@ -77,6 +77,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:player_count, :ranking, :name, :total_matches, :wins)
+      params.require(:team).permit(:player_count, :ranking, :name, :total_matches, :wins, :score)
     end
 end
