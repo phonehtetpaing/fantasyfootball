@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <%- if @matches.exist?%>
+    <%- if @matches.exists?%>
       <% @matches.each do |match| %>
         <tr>
           <td><%= Team.find_by(id: match.team1_id).name%></td>
