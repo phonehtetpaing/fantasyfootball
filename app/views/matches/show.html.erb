@@ -16,10 +16,12 @@
           <%= Team.find_by(id:@match.team2_id).name%>
           </p>
 
-          <p>
-          <strong>Winning team:</strong>
-          <%= Team.find_by(id: @match.winning_team_id).name%>
-          </p>
+          <%- if !@match.winning_team_id.nil? %>
+            <p>
+            <strong>Winning team:</strong>
+            <%= Team.find_by(id: @match.winning_team_id).name%>
+            </p>
+          <%end%>
 
         </div>
       </div>
