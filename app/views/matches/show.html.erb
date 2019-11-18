@@ -45,24 +45,22 @@
               <br>
               </strong>
             </div>
+          </div>
           <% end %>
         <%-else%>
-
           <div class="media d-block d-md-flex mt-4 form-control">
             <h5> No games.</h5>
           </div>
-
         <%end%>
-          </div>
-      </div>
       <%- if @match.winning_team_id.nil? %>
         <p>
           <%= render partial: 'games/form', locals: { game: @game } %>
         </p>
       <%end%>
       <br>
-  </div>
+
       <%= link_to 'Edit', edit_match_path(@match), class:"btn-sm btn-secondary"%> |
       <%= link_to 'Back', matches_path, class:"btn-sm btn-info" %>
+  </div>
 </div>
 </p>

@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_11_17_173330) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "games", force: :cascade do |t|
     t.integer "winner_id"
     t.integer "match_id"

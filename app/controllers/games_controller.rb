@@ -26,11 +26,12 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @match = @game.match
+    @match.games_count+=1
     if !@match.games.first.nil?
       if @game.winner_id == @match.games.first.winner_id
         @match.winning_team_id = @game.winner_id
-      else
-        @match.games_count +=1
+      elsif @match.games_count == 3
+        @match.winning_team_id = @game.winner_id
       end
     end
     @match.save!

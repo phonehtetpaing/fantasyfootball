@@ -27,6 +27,10 @@
     <%= form.hidden_field :winning_team_id %>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :games_count, value: 0%>
+  </div>
+
   <br>
   <div class="actions">
     <%= form.submit "Create Match", class: "btn-sm btn-primary"%>
